@@ -1,0 +1,161 @@
+body{
+    height: 100%;
+    margin-top:25px !important;
+  }
+.size-btn {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #dee2e6;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.size-btn:hover:not(.disabled) {
+    background: #f8f9fa;
+}
+.size-btn.active {
+    background: #212529;
+    color: white;
+    border-color: #212529;
+}
+.size-btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+.color-swatch {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    margin-right: 8px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+}
+.color-swatch.active::after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    right: -4px;
+    bottom: -4px;
+    border: 2px solid #212529;
+    border-radius: 50%;
+}
+.img-hover-zoom {
+    overflow: hidden;
+    cursor: pointer;
+}
+.img-hover-zoom img {
+    transition: transform .5s ease;
+}
+.product-badge {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: #212529;
+    color: white;
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    z-index: 1;
+}
+.sustainability-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+}
+.cart-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    transform: translateX(150%);
+    transition: transform 0.3s ease-in-out;
+}
+.cart-notification.show {
+    transform: translateX(0);
+}
+.custom-radius-btn {
+    border-radius: 30px !important;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+    background: linear-gradient(45deg, #007bff, #0056b3);
+    border: none;
+    color: white !important;
+  }
+  
+  .custom-radius-btn:hover {
+    background: linear-gradient(45deg, #0056b3, #003d80);
+    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.526);
+  }
+  .custom-radius-btnn {
+    border-radius: 30px !important;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+    background: white;
+    border: solid 1px !important;
+    color: rgb(0, 0, 0);
+  }
+
+  .custom-radius-btnn:hover {
+    background-color: #e3e3e39c !important;
+  }
+
+  .thumbnail-container {
+    margin-top: 15px; /* Space between main image and thumbnails */
+    padding: 10px; /* Padding around thumbnail container */
+    display: flex;
+    gap: 10px; /* Spacing between thumbnails */
+    overflow-x: auto; /* Allow horizontal scrolling */
+}
+
+.thumbnail {
+    height: 100px !important; /* Fixed height for thumbnails */
+    width: 100px; /* Fixed width for thumbnails */
+    object-fit: cover; /* Prevents distortion */
+    border: 2px solid transparent; /* Transparent border for inactive thumbnails */
+    border-radius: 4px; /* Rounded corners for thumbnails */
+    transition: border 0.3s ease, transform 0.3s ease; /* Smooth border transition */
+}
+
+.thumbnail:hover {
+    border-color: #007bff; /* Highlight thumbnail on hover */
+}
+
+.thumbnail.active {
+    border-color: #007bff; /* Active thumbnail border color */
+}
+
+.image-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.image-navigation button {
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.image-navigation button:hover {
+    background: rgba(255, 255, 255, 1);
+}

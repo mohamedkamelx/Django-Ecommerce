@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Bootstrap Footer</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .footer {
+            background-color: #f8f9fa; /* Light background */
+            color: #343a40; /* Dark text */
+            padding: 20px 0; /* Reduced vertical padding */
+            font-size: 14px; /* Smaller font size for compactness */
+        }
+        .footer a {
+            color: #343a40; /* Link color */
+            text-decoration: none; /* Remove underline */
+        }
+        .footer a:hover {
+            color: #0056b3; /* Darker blue on hover */
+            text-decoration: underline; /* Underline on hover */
+        }
+        .social-icons {
+            display: flex; /* Use flexbox for alignment */
+            gap: 15px; /* Space between icons */
+        }
+        .social-icons a {
+            font-size: 20px; /* Increased icon size */
+            transition: color 0.3s; /* Smooth color transition */
+        }
+    </style>
+</head>
+<body>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mb-3"> <!-- Added margin-bottom for spacing -->
+                    <h5>About Us</h5>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vehicula neque et.</p>
+                </div>
+                <div class="col-md-4 mb-3"> <!-- Added margin-bottom for spacing -->
+                    <h5>Follow Us</h5>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-2" style="border-color: #343a40;"> <!-- Thinner line -->
+            <div class="text-center">
+                <p class="mb-0">&copy; 2024 Your Company Name. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

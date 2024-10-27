@@ -1,0 +1,184 @@
+<style>
+    .card {
+        border: none;
+        border-radius: 15px !important;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        background-color: #ffffff;
+        width: 100%;
+        height: 450px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        padding: 10px;
+        padding-top: 0;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      
+      .card:hover {
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      }
+      
+      .card-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: #ff4757;
+        color: white;
+        padding: 5px 12px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        z-index: 1;
+      }
+      
+      .card-img-wrapper {
+        position: relative;
+        height: 250px;
+        overflow: hidden;
+        background-color: #ffffff;
+      }
+      
+      .card-img-top {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        transition: transform 0.3s ease;
+        padding: 0;
+      }
+      
+      .card:hover .card-img-top {
+        transform: scale(1.05);
+      }
+      
+      .card-body {
+        text-align: center;
+        padding-bottom: 0;
+      }
+      
+      .card-title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #000000 !important;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+      }
+      
+      .price {
+        font-size: 1.25rem;
+        color: #007bff;
+        font-weight: 700;
+        margin-bottom: 0rem;
+      }
+      
+      .original-price {
+        text-decoration: line-through;
+        color: #a4a4a4;
+        font-size: 0.9rem;
+        margin-right: 8px;
+      }
+      
+      .custom-radius-btn {
+        border-radius: 30px !important;
+        text-transform: uppercase;
+        font-size: 0.85rem;
+        font-weight: 600;
+        padding: 8px 20px;
+        transition: all 0.3s ease;
+        background: linear-gradient(45deg, #007bff, #0056b3);
+        border: none;
+        color: white !important;
+      }
+      
+      .custom-radius-btn:hover {
+        background: linear-gradient(45deg, #0056b3, #003d80);
+        box-shadow: 0 5px 15px rgba(0, 123, 255, 0.526);
+      }
+      
+      /* Responsive styles */
+      @media (max-width: 575px) {
+        .card {
+          max-width: 100%;
+          height: auto;
+        }
+      
+        .card-img-top {
+          height: 200px;
+        }
+      
+        .card-title {
+          font-size: 1rem;
+        }
+      
+        .price {
+          font-size: 1.1rem;
+        }
+      }
+    @media (max-width: 575px) {
+        .card {
+          max-width: 100%; /* Cards take up full width on smaller screens */
+          height: auto; /* Allow height to adjust based on content */
+        }
+      
+        .card-img-top {
+          height: 200px; /* Smaller image size for mobile */
+        }
+      
+        .card-title {
+          font-size: 1rem; /* Slightly smaller font for mobile */
+        }
+      
+        .price {
+          font-size: 0.9rem; /* Adjust price size for mobile */
+        }
+      }
+      /* For medium devices (up to 768px wide) */
+      @media (max-width: 768px) {
+        .card {
+          max-width: 100%; /* Full width for each card */
+          height: auto; /* Let the height adjust naturally */
+        }
+      
+        .card-img-top {
+          height: 270px; /* Adjust the image size for tablets */
+        }
+      
+        .card-title {
+          font-size: 1rem; /* Slightly smaller font for tablets */
+        }
+      }
+</style>
+{% for product_image in products %}
+<div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3"> 
+  <div class="card mb-3">
+    <!-- Discount badge -->
+    <div class="card-badge">20% OFF</div>
+    
+    <!-- Product link wrapper -->
+    <a href="{% url 'productdetail' product_image.varientID.productID.slug %}" class="text-decoration-none product-link">
+      <div class="card-img-wrapper">
+        <img src="{{product_image.image_url}}" class="card-img-top" alt="{{ product_image.varientID.productID.title }}">
+      </div>
+      <div class="card-body text-center">
+        <h5 class="card-title">{{ product_image.varientID.productID.title }}</h5>
+        <div class="price">
+          <span class="original-price">$1000</span>
+          ${{ product_image.varientID.productID.price }}
+        </div>
+      </div>
+    </a>
+    <!-- Add to Cart button -->
+    <div class="text-center mb-3">
+      <button class="btn w-100 custom-radius-btn">
+        <i class="bi bi-heart me-2"></i>Save For Later
+      </button>
+    </div>
+  </div>
+</div>
+
+{% endfor %}

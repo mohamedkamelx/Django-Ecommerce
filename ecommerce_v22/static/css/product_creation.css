@@ -1,0 +1,54 @@
+body {
+    background-color: #f8f9fa;
+}
+.form-container {
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+.form-label {
+    font-weight: 600;
+}
+.btn-primary {
+    background-color: #4e73df;
+    border-color: #4e73df;
+}
+.btn-primary:hover {
+    background-color: #2e59d9;
+    border-color: #2e59d9;
+}
+.color-preview {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    display: inline-block;
+    margin-left: 10px;
+}
+/* Wrapper for each image preview, aligned horizontally */
+.image-preview-wrapper {
+display: inline-block;
+margin-right: 10px; /* Space between previews */
+text-align: center;
+}
+
+.image-preview {
+width: 100px; /* Set a fixed width for the preview images */
+height: auto;
+display: block;
+margin-bottom: 5px;
+}
+
+.image-preview-container {
+display: flex;
+flex-wrap: nowrap; /* Ensures images don't wrap, remain in a row */
+overflow-x: auto;  /* Enables horizontal scrolling when there are too many images */
+gap: 15px;         /* Space between images */
+padding: 10px 0;
+max-width: 100%;   /* Container width is responsive */
+border: 1px solid #ddd; /* Optional: add border to make container stand out */
+}
+
+.main-image-radio {
+    margin-left: 10px;
+}

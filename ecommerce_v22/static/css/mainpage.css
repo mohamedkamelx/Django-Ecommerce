@@ -1,0 +1,228 @@
+body{
+  height: 100%;
+  margin-top:30px !important;
+}
+
+/* Hero Section */
+.hero-section {
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(95, 95, 95, 0.308);
+  z-index: 1;
+}
+.hero-content {
+  z-index: 2;
+  color: #ececec;
+}
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #007bff;
+}
+.hero-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 50px;
+  transition: background-color 0.3s ease;
+  color: white;
+}
+.hero-btn:hover {
+  background-color: #0056b3;
+}
+
+.card {
+  border: none;
+  border-radius: 15px !important;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  background-color: #ffffff;
+  width: 100%;
+  height: 450px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  padding: 10px;
+  padding-top: 0;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff4757;
+  color: white;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  z-index: 1;
+}
+
+.card-img-wrapper {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
+  background-color: #ffffff;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+  padding: 0;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+.card-body {
+  text-align: center;
+  padding-bottom: 0;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000 !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.price {
+  font-size: 1.25rem;
+  color: #007bff;
+  font-weight: 700;
+  margin-bottom: 0rem;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #a4a4a4;
+  font-size: 0.9rem;
+  margin-right: 8px;
+}
+
+.custom-radius-btn {
+  border-radius: 30px !important;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 20px;
+  transition: all 0.3s ease;
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  border: none;
+  color: white !important;
+}
+
+.custom-radius-btn:hover {
+  background: linear-gradient(45deg, #0056b3, #003d80);
+  box-shadow: 0 5px 15px rgba(0, 123, 255, 0.526);
+}
+
+/* Responsive styles */
+@media (max-width: 575px) {
+  .card {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .card-img-top {
+    height: 200px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .price {
+    font-size: 1.1rem;
+  }
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.pagination a {
+  color: 007bff;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+  border-radius: 25px;
+}
+
+.pagination a.active {
+  background-color: #007bff;
+  color: white;
+  border: 1px solid #007bff7a;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #0080ffc7;
+  color: #f8f9fa;
+}
+
+@media (max-width: 575px) {
+  .card {
+    max-width: 100%; /* Cards take up full width on smaller screens */
+    height: auto; /* Allow height to adjust based on content */
+  }
+
+  .card-img-top {
+    height: 200px; /* Smaller image size for mobile */
+  }
+
+  .card-title {
+    font-size: 1rem; /* Slightly smaller font for mobile */
+  }
+
+  .price {
+    font-size: 0.9rem; /* Adjust price size for mobile */
+  }
+}
+/* For medium devices (up to 768px wide) */
+@media (max-width: 768px) {
+  .card {
+    max-width: 100%; /* Full width for each card */
+    height: auto; /* Let the height adjust naturally */
+  }
+
+  .card-img-top {
+    height: 270px; /* Adjust the image size for tablets */
+  }
+
+  .card-title {
+    font-size: 1rem; /* Slightly smaller font for tablets */
+  }
+}

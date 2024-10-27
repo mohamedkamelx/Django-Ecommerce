@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/productdetails.css' %}">
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div data-item-slug="{{ item.slug }}"></div>
+    <div class="container py-5">
+        <div class="row gx-5">
+            <!-- Product Images -->
+            <div class="col-md-7 mb-4">
+                <div class="position-relative">
+                    <!-- Added Discount Badge -->
+                    <div class="position-absolute top-0 start-3 m-3 badge bg-danger" style="z-index: 10; padding: 10px 10px; border-radius: 20px; font-size:20px;">-20% OFF</div>
+                    <div class="img-hover-zoom rounded-3 mb-3">
+                        <div class="image-navigation">
+                            <button id="prevImageBtn" class="btn btn-light"><i class="bi bi-arrow-left"></i></button>
+                            <img id="mainImage" src="/api/placeholder/800/1000" class="img-fluid rounded-3" alt="Product Main Image" style="width: 100%; height: 400px; object-fit: contain;">
+                            <button id="nextImageBtn" class="btn btn-light"><i class="bi bi-arrow-right"></i></button>
+                        </div>
+                    </div>
+                    <div class="d-flex overflow-auto thumbnail-container" id="thumbnailContainer">
+                        <!-- Thumbnails will be populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+    
+            <!-- Product Details -->
+            <div class="col-md-5">
+                <div class="ps-lg-4">
+                    <h5 class="text-muted mb-2">AUTUMN COLLECTION '24</h5>
+                    <h1 class="fw-bold mb-3">{{ item.title }}</h1>
+    
+                    <!-- Modified Price Section -->
+                    <div class="mb-4 d-flex align-items-center gap-2">
+                        <span class="text-decoration-line-through text-muted fs-5">$10000</span>
+                        <span class="h3 fw-bold text-danger">${{ item.price }}</span>
+                    </div>
+    
+                    <!-- Description -->
+                    <p class="mb-4">{{ item.description }}</p>
+    
+                    <!-- Color Selection -->
+                    <div class="mb-4">
+                        <h6 class="fw-bold mb-3">Color: <span class="text-muted fw-normal" id="selectedColorText"></span></h6>
+                        <div class="d-flex" id="colorContainer">
+                            <!-- Colors will be populated by JavaScript -->
+                        </div>
+                    </div>
+    
+                    <!-- Size Selection -->
+                    <div class="mb-4">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h6 class="fw-bold mb-0">Size</h6>
+                        </div>
+                        <div class="d-flex" id="sizeContainer">
+                            <!-- Sizes will be populated by JavaScript -->
+                        </div>
+                    </div>
+    
+                    <!-- Add to Cart -->
+                    <div class="d-grid gap-2 mb-4">
+                        <button class="btn btn-lg py-4 custom-radius-btn" id="addToCartBtn"><i class="bi bi-cart-plus me-2"></i>Add to Cart</button>
+                        <button class="btn btn-lg py-4 custom-radius-btnn" id="saveBtn"><i class="bi bi-heart me-2"></i>Save for Later</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'js/productdetails.js' %}"></script>
+</body>
+</html>
