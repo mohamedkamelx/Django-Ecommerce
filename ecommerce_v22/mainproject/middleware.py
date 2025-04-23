@@ -2,7 +2,6 @@
 from django.http import HttpResponseForbidden
 
 class IPWhitelistMiddleware:
-    # List of allowed IP addresses (add your server's IP address here)
     ALLOWED_IPS = ['127.0.0.1', '208.67.222.222']
 
     def __init__(self, get_response):
