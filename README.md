@@ -1,6 +1,7 @@
 # Django-Ecommerce
 
 Django-based e-commerce platform built with the MTV (Model-Template-View) architecture.
+![Alt text](s1.png)
 
 ## 🚀 Features
 
